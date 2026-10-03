@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Unique Beauty Salon and Training Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff9f9; --surface:#f8e6ea; --ink:#2c1a26; --muted:#6d5663; --plum:#4a1f3d; --gold:#b98a2e; --on-plum:#fff4f6; --line:#e5c9d0;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#1d1119; --surface:#2a1823; --ink:#f6e9ee; --muted:#c3a9b4; --plum:#e8b9c9; --gold:#d9ad55; --on-plum:#2a1220; --line:#4a3040;}
+}
+:root[data-theme="dark"]{--bg:#1d1119; --surface:#2a1823; --ink:#f6e9ee; --muted:#c3a9b4; --plum:#e8b9c9; --gold:#d9ad55; --on-plum:#2a1220; --line:#4a3040;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;margin:0;line-height:1.1;color:var(--plum)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:flex-end;align-items:center;padding:18px 0;gap:16px}
+nav b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem;color:var(--plum)}
+nav a{text-decoration:none;margin-left:18px;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--gold)}
+.hero{padding:56px 0 72px}
+.hero h1{font-size:clamp(2.8rem,9vw,6rem);font-weight:700;letter-spacing:-.01em;max-width:9em;line-height:1}
+.hero p{max-width:34em;color:var(--muted);font-size:1.15rem;margin:22px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:600;background:var(--plum);color:var(--on-plum)}
+.btn.alt{background:transparent;color:var(--plum);border:2px solid var(--plum)}
+section{padding:64px 0}
+.tint{background:var(--surface)}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 30px}
+.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.menu li{padding:16px 0;border-bottom:1px dotted var(--line)}
+.menu strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem;color:var(--plum);display:block}
+.menu span{color:var(--muted);font-size:.97rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact dt{font-weight:600;color:var(--gold);margin-top:18px}
+.contact dd{margin:2px 0 0}
+.contact dl{margin:0}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media (max-width:700px){.menu,.contact{grid-template-columns:1fr;gap:0 }.contact{gap:24px}nav a{margin-left:12px}}
+
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--surface) 0%,transparent 70%);z-index:-1}
+.hero h1{background:linear-gradient(100deg,var(--plum) 35%,var(--gold) 50%,var(--plum) 65%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s ease-in-out infinite,rise .9s cubic-bezier(.2,.7,.2,1) both}
+.artist{margin:18px 0 0!important;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.5rem,5vw,2.2rem);color:var(--ink)!important;animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) both}
+.artist span{display:block;font-family:"Nunito Sans",system-ui,sans-serif;font-size:1rem;font-weight:600;color:var(--muted)}.artist b{display:block;color:var(--gold);font-weight:700;font-size:clamp(2.6rem,9vw,5.2rem);line-height:1.05}
+.slogan{margin:6px 0 0!important;font-style:italic;font-size:1.25rem!important;color:var(--plum)!important;animation:rise .9s .45s cubic-bezier(.2,.7,.2,1) both}
+.lead{margin-top:18px!important}
+.sp{position:absolute;color:var(--gold);animation:float 5s ease-in-out infinite;pointer-events:none}
+.s1{right:12%;top:18%;font-size:2rem}.s2{right:26%;top:52%;font-size:1.1rem;animation-delay:1.2s}.s3{right:6%;top:64%;font-size:1.5rem;animation-delay:2.4s}
+.btn{transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(74,31,61,.25)}
+.menu li{transition:padding-left .2s}.menu li:hover{padding-left:10px}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0);opacity:.5}50%{transform:translateY(-14px) rotate(20deg);opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1{background-position:50% 0}}
+
+.why{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why li{border-top:3px solid var(--gold);padding-top:12px}
+.why strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem;color:var(--plum);display:block}
+.why span{color:var(--muted);font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ph{aspect-ratio:1/1;border-radius:14px;display:grid;place-items:center;font-size:2rem;color:var(--gold);background:linear-gradient(135deg,var(--bg),var(--line));border:1px dashed var(--gold)}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:10}
+.fb{padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center}
+.fb.wa{background:#1f9d55}.fb.call{background:#4a1f3d}
+@media (max-width:700px){.why{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
+
+[hidden]{display:none!important}
+.hero{padding-top:36px}
+.tabbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tab{background:none;border:0;border-bottom:3px solid transparent;font:600 1rem "Nunito Sans",system-ui,sans-serif;color:var(--muted);padding:15px 18px;white-space:nowrap;cursor:pointer}
+.tab:hover{color:var(--plum)}
+.tab[aria-selected="true"]{color:var(--plum);border-bottom-color:var(--gold)}
+.pic{margin:0}.pic svg{display:block;width:100%;aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,var(--bg),var(--line))}.pic figcaption{text-align:center;margin-top:8px;color:var(--muted);font-size:.95rem}
+.gh{font-size:1.7rem;margin:34px 0 14px}.gh:first-of-type{margin-top:0}
+.pic{cursor:zoom-in;transition:transform .2s}.pic:hover{transform:scale(1.03)}
+#zoom{border:0;border-radius:18px;padding:18px;background:var(--bg);color:var(--ink);max-width:min(92vw,560px);text-align:center}
+#zoom::backdrop{background:rgba(20,8,16,.7)}#zoom svg{width:min(80vw,500px);height:auto;aspect-ratio:1/1;border-radius:14px;display:block;margin:0 auto 10px}#zoom figcaption{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;color:var(--plum);margin-bottom:12px}
+.note{display:inline-block;margin-top:6px;font-weight:700;color:var(--plum)}
+.tc{display:block;font-size:.5em;font-weight:600;margin-top:8px;letter-spacing:0}
+/* ==========================================================================
+   Luxury hero — Dark Luxury & Champagne Gold (always dark, in both themes)
+   ========================================================================== */
+.lux-hero{
+  --lux-bg:#0B0F19;
+  --lux-gold:#E2C799;
+  --lux-gold-rgb:226,199,153;
+  --lux-text:#FFFFFF;
+  --lux-muted:rgba(255,255,255,.7);
+  --lux-glass:rgba(255,255,255,.12);
+  --lux-glass-hover:rgba(255,255,255,.2);
+  --lux-glass-border:rgba(255,255,255,.25);
+  --lux-glass-border-hover:rgba(255,255,255,.4);
+  --lux-ghost-border:rgba(255,255,255,.3);
+  --lux-ghost-border-hover:rgba(255,255,255,.6);
+  --lux-ghost-tint:rgba(255,255,255,.05);
+  --lux-blur:12px;
+  --lux-glow-blur:80px;
+  --lux-pill:50px;
+  --lux-ease:cubic-bezier(.22,1,.36,1);
+  --lux-speed:.45s;
+
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:min(92vh,820px);
+  padding:72px 0 88px;
+  background-color:var(--lux-bg);
+  color:var(--lux-text);
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* Spherical ambient glows */
+.lux-glow{
+  position:absolute;
+  z-index:-1;
+  aspect-ratio:1;
+  border-radius:50%;
+  filter:blur(var(--lux-glow-blur));
+  pointer-events:none;
+}
+.lux-glow--a{
+  top:-14%;
+  left:-10%;
+  width:clamp(320px,48vw,660px);
+  background:radial-gradient(circle,rgba(var(--lux-gold-rgb),.45) 0%,rgba(var(--lux-gold-rgb),.16) 45%,rgba(var(--lux-gold-rgb),0) 72%);
+}
+.lux-glow--b{
+  right:-12%;
+  bottom:-20%;
+  width:clamp(280px,40vw,560px);
+  background:radial-gradient(circle,rgba(var(--lux-gold-rgb),.32) 0%,rgba(var(--lux-gold-rgb),.12) 50%,rgba(var(--lux-gold-rgb),0) 72%);
+}
+
+/* Content layer */
+.lux-content{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  width:100%;
+}
+.lux-eyebrow{
+  display:inline-flex;
+  padding:7px 18px;
+  margin-bottom:26px;
+  border:1px solid rgba(var(--lux-gold-rgb),.35);
+  border-radius:var(--lux-pill);
+  background:rgba(var(--lux-gold-rgb),.08);
+  -webkit-backdrop-filter:blur(var(--lux-blur));
+  backdrop-filter:blur(var(--lux-blur));
+  color:var(--lux-gold);
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.lux-hero h1{
+  max-width:11em;
+  color:var(--lux-text);
+  font-size:clamp(2.6rem,8vw,5.2rem);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:-.01em;
+}
+.lux-hero h1 em{color:var(--lux-gold);font-style:italic;font-weight:500}
+.lux-hero .tc{color:var(--lux-muted)}
+.lux-artist{
+  margin:26px 0 0;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.5rem,4.5vw,2rem);
+  line-height:1.1;
+}
+.lux-artist span{
+  display:block;
+  margin-bottom:4px;
+  color:var(--lux-muted);
+  font-family:"Nunito Sans",system-ui,sans-serif;
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.lux-artist b{color:var(--lux-gold);font-weight:600}
+.lux-slogan{
+  margin:10px 0 0;
+  color:var(--lux-text);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.35rem;
+  font-style:italic;
+}
+.lux-lead{
+  max-width:34em;
+  margin:18px 0 36px;
+  color:var(--lux-muted);
+  font-size:1.08rem;
+}
+.lux-actions{display:flex;flex-wrap:wrap;gap:14px}
+
+/* Spherical translucent buttons */
+.lux-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:15px 30px;
+  border-radius:var(--lux-pill);
+  color:var(--lux-text);
+  font-weight:600;
+  letter-spacing:.02em;
+  text-decoration:none;
+  transition:
+    transform var(--lux-speed) var(--lux-ease),
+    background-color var(--lux-speed) var(--lux-ease),
+    border-color var(--lux-speed) var(--lux-ease),
+    box-shadow var(--lux-speed) var(--lux-ease);
+}
+.lux-btn:hover{transform:translateY(-2px)}
+
+.lux-btn--primary{
+  background:var(--lux-glass);
+  border:1px solid var(--lux-glass-border);
+  -webkit-backdrop-filter:blur(var(--lux-blur));
+  backdrop-filter:blur(var(--lux-blur));
+}
+.lux-btn--primary:hover{
+  background:var(--lux-glass-hover);
+  border-color:var(--lux-glass-border-hover);
+  box-shadow:0 10px 30px -10px rgba(var(--lux-gold-rgb),.4);
+}
+.lux-arrow{
+  display:inline-block;
+  font-size:1.1em;
+  line-height:1;
+  transition:transform var(--lux-speed) var(--lux-ease);
+}
+.lux-btn--primary:hover .lux-arrow{transform:translateX(4px)}
+
+.lux-btn--secondary{
+  background:transparent;
+  border:1px solid var(--lux-ghost-border);
+}
+.lux-btn--secondary:hover{
+  background:var(--lux-ghost-tint);
+  border-color:var(--lux-ghost-border-hover);
+}
+
+@media (max-width:480px){
+  .lux-hero{min-height:auto;padding:56px 0 72px}
+  .lux-actions{flex-direction:column;width:100%}
+  .lux-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .lux-btn:hover,.lux-btn--primary:hover .lux-arrow{transform:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><radialGradient id="skin" cx="42%" cy="35%" r="70%"><stop offset="0" stop-color="#fbe0c8"/><stop offset="1" stop-color="#e2a982"/></radialGradient><linearGradient id="neckg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98f62"/><stop offset="1" stop-color="#e8b994"/></linearGradient><radialGradient id="blush"><stop offset="0" stop-color="#f08aa5" stop-opacity=".55"/><stop offset="1" stop-color="#f08aa5" stop-opacity="0"/></radialGradient><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".35" stop-color="#fff" stop-opacity=".32"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient><linearGradient id="bg0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--bg)"/><stop offset="1" style="stop-color:var(--line)"/></linearGradient><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--surface)"/><stop offset="1" style="stop-color:var(--bg)"/></linearGradient><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--line)"/><stop offset="1" style="stop-color:var(--surface)"/></linearGradient><linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--bg)"/><stop offset="1" style="stop-color:var(--surface)"/></linearGradient></defs></svg>
+<dialog id="zoom"><div id="zc"></div><button id="zx" class="btn alt" type="button">Close</button></dialog>
+<header class="lux-hero" aria-labelledby="hero-title">
+  <div class="lux-glow lux-glow--a" aria-hidden="true"></div>
+  <div class="lux-glow lux-glow--b" aria-hidden="true"></div>
+  <div class="wrap lux-content">
+    <span class="lux-eyebrow">Ladies &amp; Kids Beauty Studio</span>
+    <h1 id="hero-title">New Unique <em>Beauty Salon</em><span class="tc">and Training Center</span></h1>
+    <p class="lux-artist"><span>Beauty Artist</span><b>Paramjit Kaur</b></p>
+    <p class="lux-slogan">Feel good. Look good. Everywhere.</p>
+    <p class="lux-lead">A friendly home salon for ladies and kids: hair, skin, and special occasions. Walk in or book a visit.</p>
+    <div class="lux-actions">
+      <a class="lux-btn lux-btn--primary" href="#contact">
+        <span>Book Appointment</span>
+        <span class="lux-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="lux-btn lux-btn--secondary" href="tel:+918427799533">Call +91 84277 99533</a>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" id="t-about" data-t="about" aria-selected="true">About us</button>
+    <button class="tab" role="tab" id="t-services" data-t="services" aria-selected="false" tabindex="-1">Services</button>
+    <button class="tab" role="tab" id="t-training" data-t="training" aria-selected="false" tabindex="-1">Training</button>
+    <button class="tab" role="tab" id="t-gallery" data-t="gallery" aria-selected="false" tabindex="-1">Our glimpses</button>
+    <button class="tab" role="tab" id="t-contact" data-t="contact" aria-selected="false" tabindex="-1">Visit us &amp; book a visit</button>
+  </div>
+</div>
+
+<section id="about" role="tabpanel" aria-labelledby="t-about">
+  <div class="wrap">
+    <h2>About us</h2>
+    <p class="sub" style="max-width:36em">New Unique Beauty Salon and Training Center is run by beauty artist Paramjit Kaur from her home. We offer hair, skin, and makeup services for ladies and kids in a calm, personal setting.</p>
+    <ul class="why">
+      <li><strong>Ladies and kids</strong><span>A comfortable space for women and children.</span></li>
+      <li><strong>Clean and hygienic</strong><span>Fresh, tidy tools and setup for every visit.</span></li>
+      <li><strong>Personal attention</strong><span>One artist looks after you from start to finish.</span></li>
+      <li><strong>Open six days a week</strong><span>Closed on Tuesday. Call or message to pick your time.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="services" role="tabpanel" aria-labelledby="t-services" class="tint">
+  <div class="wrap">
+    <h2>Our services</h2>
+    <p class="sub">Ask us for current prices when you call or visit.</p>
+    <ul class="menu">
+      <li><strong>Haircut &amp; styling</strong><span>Trims, layers, and styling for ladies and kids.</span></li>
+      <li><strong>Hair colour &amp; highlights</strong><span>Global colour, highlights, and touch-ups.</span></li>
+      <li><strong>Hair spa &amp; deep conditioning</strong><span>Treatments for dry, damaged, or frizzy hair.</span></li>
+      <li><strong>Rebonding, keratin &amp; smoothening</strong><span>Smooth, shiny, easy-to-manage hair.</span></li>
+      <li><strong>Straightening &amp; curling</strong><span>Hair set for parties and special days.</span></li>
+      <li><strong>Head massage &amp; oiling</strong><span>A relaxing scalp massage.</span></li>
+      <li><strong>Facial &amp; cleanup</strong><span>Skin care for a fresh, glowing face.</span></li>
+      <li><strong>De-tan &amp; skin polishing</strong><span>Brighter, smoother skin.</span></li>
+      <li><strong>Bleach</strong><span>Face and body bleach.</span></li>
+      <li><strong>Threading &amp; waxing</strong><span>Eyebrows, face, arms, legs, and full body.</span></li>
+      <li><strong>Bridal &amp; party makeup</strong><span>Makeup and hair for weddings, engagements, and parties.</span></li>
+      <li><strong>Festive &amp; bridal packs</strong><span>Complete packages for weddings and festivals.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="training" role="tabpanel" aria-labelledby="t-training">
+  <div class="wrap">
+    <h2>Training</h2>
+    <p class="sub" style="max-width:36em">Learn the same services we offer, taught by beauty artist Paramjit Kaur. Call or message us to ask about batch timings, course duration and fees.</p>
+    <ul class="menu">
+      <li><strong>Haircut &amp; styling</strong><span>Learn layered cuts, bob cuts, and hair styling.</span></li>
+      <li><strong>Hair colour &amp; highlights</strong><span>Learn colour application, highlights, and touch-ups.</span></li>
+      <li><strong>Hair spa &amp; treatments</strong><span>Learn hair spa, deep conditioning, rebonding, keratin, and smoothening.</span></li>
+      <li><strong>Straightening, curling &amp; head massage</strong><span>Learn straightening, curling, head massage, and oiling.</span></li>
+      <li><strong>Facial &amp; skin care</strong><span>Learn facials, cleanup, de-tan, skin polishing, and bleach.</span></li>
+      <li><strong>Threading &amp; waxing</strong><span>Learn eyebrow and face threading, and waxing for arms, legs, and full body.</span></li>
+      <li><strong>Bridal, festive &amp; party makeup</strong><span>Learn makeup and hair for brides, festivals, and parties.</span></li>
+    </ul>
+    <div class="btns" style="margin-top:30px">
+      <a class="btn" href="tel:+918427799533">Call +91 84277 99533</a>
+      <a class="btn alt" href="https://wa.me/918427799533?text=Hello%2C%20I%20would%20like%20to%20know%20about%20training%20at%20New%20Unique%20Beauty%20Salon%20and%20Training%20Center." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+    <p class="sub" style="margin-top:16px">Phone and WhatsApp: <strong>+91 84277 99533</strong></p>
+  </div>
+</section>
+
+<section id="gallery" role="tabpanel" aria-labelledby="t-gallery" class="tint">
+  <div class="wrap">
+    <h2>Our glimpses</h2>
+    <p class="sub">Sample pictures for each service. Tap a picture to enlarge it. Real photos of our work are coming soon.</p>
+    <h3 class="gh">Hair</h3><div class="grid"><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Layered haircut"><rect width="100" height="100" fill="url(#bg0)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/></svg><figcaption>Layered haircut</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Bob haircut"><rect width="100" height="100" fill="url(#bg1)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="#3a2030"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/></svg><figcaption>Bob haircut</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Hair colour"><rect width="100" height="100" fill="url(#bg2)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#8a1c3c"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#8a1c3c"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><circle cx="14" cy="14" r="5" fill="#8a1c3c"/><circle cx="26" cy="14" r="5" fill="#d9ad55"/><circle cx="38" cy="14" r="5" fill="#5a3326"/></svg><figcaption>Hair colour</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Highlights"><rect width="100" height="100" fill="url(#bg3)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M30 56L28 92M70 56L72 92" stroke="#d9ad55" stroke-width="3" fill="none"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><path d="M44 33C50 38 56 38 60 44" stroke="#d9ad55" stroke-width="3" fill="none"/></svg><figcaption>Highlights</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Hair spa"><rect width="100" height="100" fill="url(#bg0)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#5a3326"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#5a3326"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><path d="M16 22q5 8 0 12q-5-4 0-12z" fill="#6cc3d5"/><path d="M84 30q5 8 0 12q-5-4 0-12z" fill="#6cc3d5"/><path d="M78 10q5 8 0 12q-5-4 0-12z" fill="#6cc3d5"/><path d="M22 44q5 8 0 12q-5-4 0-12z" fill="#6cc3d5"/></svg><figcaption>Hair spa</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Rebonding &amp; keratin"><rect width="100" height="100" fill="url(#bg1)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M14 18q-8 10 0 20t0 20t0 20" stroke="#5a3326" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M24 18q-8 10 0 20t0 20t0 20" stroke="#5a3326" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M34 18q-8 10 0 20t0 20t0 20" stroke="#5a3326" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M44 50H56M52 44L58 50 52 56" stroke="#d9ad55" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 18V82" stroke="#3a2030" stroke-width="4" stroke-linecap="round"/><path d="M65 22V70" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round"/><path d="M76 18V82" stroke="#3a2030" stroke-width="4" stroke-linecap="round"/><path d="M75 22V70" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round"/><path d="M86 18V82" stroke="#3a2030" stroke-width="4" stroke-linecap="round"/><path d="M85 22V70" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round"/></svg><figcaption>Rebonding &amp; keratin</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Straightening"><rect width="100" height="100" fill="url(#bg2)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><path d="M31 62V90M69 62V90" stroke="#fff" stroke-opacity=".4" stroke-width="2"/></svg><figcaption>Straightening</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Curling"><rect width="100" height="100" fill="url(#bg3)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><circle cx="28" cy="44" r="10" fill="#2b1a24"/><circle cx="28" cy="44" r="10" fill="url(#sheen)"/><circle cx="25" cy="56" r="10" fill="#2b1a24"/><circle cx="25" cy="56" r="10" fill="url(#sheen)"/><circle cx="28" cy="68" r="10" fill="#2b1a24"/><circle cx="28" cy="68" r="10" fill="url(#sheen)"/><circle cx="72" cy="44" r="10" fill="#2b1a24"/><circle cx="72" cy="44" r="10" fill="url(#sheen)"/><circle cx="75" cy="56" r="10" fill="#2b1a24"/><circle cx="75" cy="56" r="10" fill="url(#sheen)"/><circle cx="72" cy="68" r="10" fill="#2b1a24"/><circle cx="72" cy="68" r="10" fill="url(#sheen)"/><circle cx="34" cy="30" r="10" fill="#2b1a24"/><circle cx="34" cy="30" r="10" fill="url(#sheen)"/><circle cx="46" cy="24" r="10" fill="#2b1a24"/><circle cx="46" cy="24" r="10" fill="url(#sheen)"/><circle cx="58" cy="24" r="10" fill="#2b1a24"/><circle cx="58" cy="24" r="10" fill="url(#sheen)"/><circle cx="68" cy="32" r="10" fill="#2b1a24"/><circle cx="68" cy="32" r="10" fill="url(#sheen)"/><circle cx="26" cy="80" r="10" fill="#2b1a24"/><circle cx="26" cy="80" r="10" fill="url(#sheen)"/><circle cx="74" cy="80" r="10" fill="#2b1a24"/><circle cx="74" cy="80" r="10" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><circle cx="40" cy="34" r="8" fill="#2b1a24"/><circle cx="40" cy="34" r="8" fill="url(#sheen)"/><circle cx="52" cy="31" r="8" fill="#2b1a24"/><circle cx="52" cy="31" r="8" fill="url(#sheen)"/><circle cx="62" cy="35" r="8" fill="#2b1a24"/><circle cx="62" cy="35" r="8" fill="url(#sheen)"/></svg><figcaption>Curling</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Head massage &amp; oiling"><rect width="100" height="100" fill="url(#bg0)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><rect x="44" y="12" width="12" height="12" rx="2" fill="var(--plum)"/><rect x="34" y="24" width="32" height="48" rx="9" fill="#d9a03a"/><rect x="40" y="38" width="20" height="22" rx="3" fill="#fff" opacity=".7"/><path d="M50 76q5 8 0 12q-5-4 0-12z" fill="#d9a03a"/><path d="M38 84q5 8 0 12q-5-4 0-12z" fill="#d9a03a"/><path d="M62 82q5 8 0 12q-5-4 0-12z" fill="#d9a03a"/><text x="70" y="24" font-size="12" fill="#d9ad55">✦</text></svg><figcaption>Head massage &amp; oiling</figcaption></figure></div><h3 class="gh">Festive, bridal and party packs</h3><div class="grid"><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Festive pack"><rect width="100" height="100" fill="url(#bg1)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><circle cx="50" cy="16" r="11" fill="#3a2030"/><circle cx="50" cy="16" r="11" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><circle cx="43" cy="15" r="3.2" fill="#e87aa0"/><circle cx="43" cy="15" r="1" fill="#d9ad55"/><circle cx="57" cy="15" r="3.2" fill="#e87aa0"/><circle cx="57" cy="15" r="1" fill="#d9ad55"/><circle cx="50" cy="9" r="3.2" fill="#e87aa0"/><circle cx="50" cy="9" r="1" fill="#d9ad55"/><circle cx="50" cy="20" r="3.2" fill="#e87aa0"/><circle cx="50" cy="20" r="1" fill="#d9ad55"/><circle cx="35" cy="60" r="2.5" fill="#d9ad55"/><circle cx="65" cy="60" r="2.5" fill="#d9ad55"/><text x="14" y="26" font-size="13" fill="#d9ad55">✦</text><text x="76" y="40" font-size="10" fill="#d9ad55">✦</text></svg><figcaption>Festive pack</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Bridal pack"><rect width="100" height="100" fill="url(#bg2)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M24 58C20 14 80 14 76 58L76 80 64 56 36 56 24 80Z" fill="#b0233a"/><path d="M24 58C20 14 80 14 76 58L76 80 64 56 36 56 24 80Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M33 44C36 26 64 26 67 44 62 34 38 34 33 44Z" fill="#8f1a2e"/><path d="M33 44C36 26 64 26 67 44 62 34 38 34 33 44Z" fill="url(#sheen)"/><path d="M50 33V42" stroke="#d9ad55" stroke-width="1.5"/><circle cx="50" cy="44" r="2.5" fill="#d9ad55"/><circle cx="50" cy="48" r="1.4" fill="#b0233a"/><circle cx="35" cy="58" r="2.5" fill="#d9ad55"/><circle cx="65" cy="58" r="2.5" fill="#d9ad55"/><path d="M38 80Q50 94 62 80" stroke="#d9ad55" stroke-width="3" fill="none"/></svg><figcaption>Bridal pack</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Party makeup"><rect width="100" height="100" fill="url(#bg3)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="#3a2030"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><ellipse cx="43" cy="48" rx="4.5" ry="2.4" fill="#8e4a9c"/><ellipse cx="57" cy="48" rx="4.5" ry="2.4" fill="#8e4a9c"/><circle cx="40" cy="56" r="3.5" fill="#f4a3b8" opacity=".6"/><circle cx="60" cy="56" r="3.5" fill="#f4a3b8" opacity=".6"/><ellipse cx="50" cy="60" rx="5" ry="2.6" fill="#c2185b"/></svg><figcaption>Party makeup</figcaption></figure></div><h3 class="gh">Skin, threading and waxing</h3><div class="grid"><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample De-tan"><rect width="100" height="100" fill="url(#bg0)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><path d="M50 31A15 19 0 0 0 50 69Z" fill="#b97a4c" opacity=".5"/><text x="62" y="36" font-size="11" fill="#d9ad55">✦</text><text x="68" y="52" font-size="8" fill="#d9ad55">✦</text></svg><figcaption>De-tan</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Skin polishing"><rect width="100" height="100" fill="url(#bg1)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="#3a2030"/><path d="M27 52C26 18 74 18 73 52L77 94 62 94 60 60 40 60 38 94 23 94Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="#fff" opacity=".3"/><text x="24" y="40" font-size="12" fill="#d9ad55">✦</text><text x="68" y="56" font-size="10" fill="#d9ad55">✦</text><text x="58" y="32" font-size="8" fill="#d9ad55">✦</text></svg><figcaption>Skin polishing</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Facial &amp; cleanup"><rect width="100" height="100" fill="url(#bg2)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="#bfe3c8"/><circle cx="43" cy="46" r="4.5" fill="#8fcf9b" stroke="#5ea46f"/><circle cx="57" cy="46" r="4.5" fill="#8fcf9b" stroke="#5ea46f"/><path d="M30 40C30 12 70 12 70 40 62 26 38 26 30 40Z" fill="#fff" stroke="#e5c9d0"/></svg><figcaption>Facial &amp; cleanup</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Bleach"><rect width="100" height="100" fill="url(#bg3)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="#3a2030"/><path d="M27 52C26 20 74 20 73 52L74 70 60 70 60 52 40 52 40 70 26 70Z" fill="url(#sheen)"/><path d="M14 100Q20 76 44 72H56Q80 76 86 100Z" fill="var(--plum)"/><path d="M44 72Q50 80 56 72Z" fill="#fff" opacity=".18"/><rect x="44" y="62" width="12" height="14" rx="3" fill="url(#neckg)"/><ellipse cx="35" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="65" cy="52" rx="2.6" ry="4.2" fill="#e8b994"/><ellipse cx="50" cy="50" rx="15" ry="19" fill="url(#skin)"/><ellipse cx="39" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><ellipse cx="61" cy="56" rx="4.5" ry="3" fill="url(#blush)"/><path d="M38.5 48Q43 44.4 47.5 48Q43 50.8 38.5 48Z" fill="#fff"/><circle cx="43" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="43" cy="47.7" r=".8" fill="#111"/><circle cx="43.6" cy="47" r=".5" fill="#fff"/><path d="M38.2 48Q43 43.6 47.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M52.5 48Q57 44.4 61.5 48Q57 50.8 52.5 48Z" fill="#fff"/><circle cx="57" cy="47.7" r="1.9" fill="#5a3326"/><circle cx="57" cy="47.7" r=".8" fill="#111"/><circle cx="57.6" cy="47" r=".5" fill="#fff"/><path d="M52.2 48Q57 43.6 61.8 48" stroke="#1f1118" stroke-width=".9" fill="none"/><path d="M38 43.2Q43 40.6 48 42.6M52 42.6Q57 40.6 62 43.2" stroke="#2b1a24" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M50 49Q48 55.5 50.8 56.6" stroke="#c98f62" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M44.5 61Q47.5 59 50 60.2Q52.5 59 55.5 61Q50 65.6 44.5 61Z" fill="#c9566b"/><path d="M46 61.4Q50 62.6 54 61.4" stroke="#8f3447" stroke-width=".5" fill="none"/><ellipse cx="49" cy="62.5" rx="2" ry=".6" fill="#fff" opacity=".35"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="#3a2030"/><path d="M34 46C34 24 66 24 66 46 60 35 46 33 34 46Z" fill="url(#sheen)"/><circle cx="43" cy="42" r="4" fill="#fff" opacity=".9"/><circle cx="57" cy="42" r="4" fill="#fff" opacity=".9"/><circle cx="39" cy="54" r="4" fill="#fff" opacity=".9"/><circle cx="61" cy="54" r="4" fill="#fff" opacity=".9"/><circle cx="50" cy="67" r="4" fill="#fff" opacity=".9"/></svg><figcaption>Bleach</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Threading"><rect width="100" height="100" fill="url(#bg0)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><ellipse cx="50" cy="54" rx="34" ry="40" fill="#f0c9a8"/><ellipse cx="36" cy="54" rx="6" ry="3" fill="#fff"/><ellipse cx="64" cy="54" rx="6" ry="3" fill="#fff"/><circle cx="36" cy="54" r="1.8" fill="#3a2030"/><circle cx="36" cy="54" r="1.8" fill="url(#sheen)"/><circle cx="64" cy="54" r="1.8" fill="#3a2030"/><circle cx="64" cy="54" r="1.8" fill="url(#sheen)"/><path d="M24 42Q36 30 47 40M53 40Q64 30 76 42" stroke="#3a2030" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M50 58Q46 68 52 70M42 78Q50 83 58 78" stroke="#a8693f" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 22L88 46" stroke="#d9ad55" stroke-width="1.6" stroke-dasharray="3 2"/><circle cx="12" cy="22" r="3" fill="#e8b994"/><circle cx="88" cy="46" r="3" fill="#e8b994"/></svg><figcaption>Threading</figcaption></figure><figure class="pic" tabindex="0" role="button" aria-label="Enlarge picture"><svg viewBox="0 0 100 100" role="img" aria-label="Sample Waxing"><rect width="100" height="100" fill="url(#bg1)"/><circle cx="82" cy="18" r="14" fill="var(--gold)" opacity=".13"/><circle cx="14" cy="82" r="10" fill="var(--gold)" opacity=".1"/><circle cx="72" cy="88" r="6" fill="#fff" opacity=".2"/><rect x="34" y="8" width="32" height="84" rx="14" fill="#f0c9a8"/><rect x="31" y="36" width="38" height="18" rx="3" fill="#f4d35e"/><path d="M69 36l14-11 4 11-12 6z" fill="#f4d35e" opacity=".85"/><text x="40" y="74" font-size="11" fill="#d9ad55">✦</text><text x="56" y="22" font-size="9" fill="#d9ad55">✦</text></svg><figcaption>Waxing</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="contact" role="tabpanel" aria-labelledby="t-contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Visit us</h2>
+      <dl>
+        <dt>Beauty artist</dt>
+        <dd>Paramjit Kaur</dd>
+        <dt>Address</dt>
+        <dd>House No. 937 B, Rose Garden,<br>Near Dilbag Nagar Extension,<br>Jalandhar, Punjab – 144002<br><strong class="note">Our parlor is at home. Please call before you visit to book an appointment.</strong></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+918427799533">+91 84277 99533</a></dd>
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/918427799533?text=Hello%2C%20I%20would%20like%20to%20book%20a%20visit%20at%20New%20Unique%20Beauty%20Salon%20and%20Training%20Center.">Message us on WhatsApp</a></dd>
+        <dt>Opening hours</dt>
+        <dd>Monday: 10:00 am – 8:00 pm<br>Wednesday to Sunday: 10:00 am – 8:00 pm<br><strong class="note">Tuesday is closed</strong></dd>
+      </dl>
+    </div>
+    <div>
+      <h2>Book a visit</h2>
+      <p class="sub">Call or send a WhatsApp message with your preferred service and time. We will confirm your slot.</p>
+      <div class="btns">
+        <a class="btn" href="tel:+918427799533">Call +91 84277 99533</a>
+        <a class="btn alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=31.324838,75.541289" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="float">
+  <a class="fb wa" href="https://wa.me/918427799533?text=Hello%2C%20I%20would%20like%20to%20book%20a%20visit%20at%20New%20Unique%20Beauty%20Salon%20and%20Training%20Center." aria-label="WhatsApp us">WhatsApp</a>
+  <a class="fb call" href="tel:+918427799533" aria-label="Call now">Call +91 84277 99533</a>
+</div>
+<footer class="wrap">&copy; Paramjit Kaur. All rights reserved.</footer>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function show(id){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-t')===id;
+      t.setAttribute('aria-selected',on);
+      t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('data-t')).hidden=!on;
+    });
+  }
+  function go(id){show(id);var b=document.querySelector('.tabbar');window.scrollTo({top:b.offsetTop,behavior:'smooth'});}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t.getAttribute('data-t'));});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+      if(n===null)return;
+      n=(n+tabs.length)%tabs.length;tabs[n].focus();show(tabs[n].getAttribute('data-t'));
+    });
+  });
+  [].slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    if(document.querySelector('[role=tab][data-t="'+id+'"]'))a.addEventListener('click',function(e){e.preventDefault();go(id);});
+  });
+  var h=location.hash.slice(1);
+  show(document.querySelector('[role=tab][data-t="'+h+'"]')?h:'about');
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('zoom'),c=document.getElementById('zc');
+  function open(f){c.innerHTML='';c.appendChild(f.querySelector('svg').cloneNode(true));var t=document.createElement('figcaption');t.textContent=f.querySelector('figcaption').textContent;c.appendChild(t);d.showModal();}
+  [].forEach.call(document.querySelectorAll('.pic'),function(f){
+    f.addEventListener('click',function(){open(f);});
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(f);}});
+  });
+  document.getElementById('zx').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+})();
+</script>
+</body>
+</html>
